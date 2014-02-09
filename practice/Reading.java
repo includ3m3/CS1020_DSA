@@ -1,9 +1,3 @@
-// Kaung Htet Aung
-// A0117993R
-// C01
-// This program reads data in different formats and performs
-// the respective operations.
-
 import java.util.*;
 public class Reading {
 	private static final String LIMIT = "LIMIT",SENTINEL = "SENTINEL",EOF = "EOF",

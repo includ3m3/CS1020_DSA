@@ -1,11 +1,3 @@
-// CS1020 (AY2013/4 Semester 2)
-// Name: Kaung Htet Aung
-// Matric. No.: A0117993R 
-// Lab group: C01
-// This program is to convert UK date format to equivalent American format
-// and also whether the year is a leap year
-import java.util.*;
-
 public class DateConvert {
 	//Checking whether the year is a leap year
 	private static boolean isLeapYear(int year){

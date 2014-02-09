@@ -1,11 +1,3 @@
-// CS1020 (AY2013/4 Semester 2)
-// Take-home lab #1
-// Name: Kaung Htet Aung
-// Matric. No.: A0117993R 
-// Lab group: C01 
-// This program is to compute the overlapping area of two rectangles
-// based on given coordinates
-
 import java.util.*;
 import java.awt.*;
 

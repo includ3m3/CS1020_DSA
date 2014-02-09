@@ -1,9 +1,3 @@
-// CS1020 (AY2013/4 Semester 2)
-// Name: Kaung Htet Aung
-// Matric. No.: A0117993R
-// Lab group: C01
-// This program is to compute the area of triangle using Heron's formula
-
 import java.util.*;
 
 public class AreaOfTriangle {

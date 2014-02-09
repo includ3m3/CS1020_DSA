@@ -1,12 +1,3 @@
-// Name: Kaung Htet Aung
-// Matric. No.: A0117993R
-// Lab group: C01
-// This program reads the name, age and vaccination status of
-// some children and computes their average age and percentage
-// of children who are vaccinated.
-// Unlike the earlier version (practice exercise 4), this version
-// keeps reading in data until there is no more name.
-
 import java.util.*;
 
 public class Vaccination_V2 {
