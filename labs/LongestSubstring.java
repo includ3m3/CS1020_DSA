@@ -1,46 +1,59 @@
+/*  
+ * CS1020 (AY2013/4 Sem2)  
+ * Sit-in Lab #A 
+ * Author    : Kaung Htet Aung
+ * Matric no.: A0117993R 
+ * Lab group : C01 
+ * Description of program: Getting length of the longest substring without repeated characters in a string
+ */ 
+
 import java.util.*;
 
-/* Getting length of the longest substring without repeated characters in a string */
-
 public class LongestSubstring {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
-	public static void main(String[] args) {	
-		Scanner sc = new Scanner (System.in);
-		String inStr = new String(sc.next().toLowerCase());
-		int maxSubstrLength = -1;
+		String str = sc.nextLine();
 
-		// startPos is the starting index of the current substring without repeated characters in the string
-		int startPos = 0;
+		str = str.toLowerCase();
+		System.out.println(longestString(str));
+	}
 
-		while (true) {
-			int endPos = startPos+1;
-			int newStartPos = 0;
-			int curLength = 0;
-
-			// keep extending current substring until hit a repeated character
-			while (endPos < inStr.length()) {
-				boolean stop = false;
-
-				// check if current character is repeated before further extending the substring
-				for (int counter = endPos-1; counter >= startPos; counter--)
-					if (inStr.charAt(counter) == inStr.charAt(endPos)) {
-						stop = true;
-						newStartPos = counter+1; // new starting position for next longest substring candidate
+	//looping until the same char found and return the length of the new string
+	public static int longestString(String str){
+		int longest = 0;
+		String newstr = "";
+		for(int i=0;i<str.length();i++){
+			newstr = newstr+str.charAt(i);
+			for(int j=i+1;j<str.length();j++){
+				if(str.charAt(i) != str.charAt(j)){
+					if(repCheck(newstr,str.charAt(j)))
 						break;
+					else
+						newstr = newstr + "" + str.charAt(j);
+					/*
+					if(j ==  str.length()-1){
+						newstr = "";
 					}
-				if (stop)					
-					break;
-				endPos++;
+					*/
+				}else{
+					break;	
+				}
 			}
-			curLength = endPos-startPos;
-			startPos = newStartPos;
-
-			// update the longest length if current substring is the longest
-			if (curLength > maxSubstrLength)
-				maxSubstrLength = curLength;
-			if (endPos >= inStr.length()) // no more candidates to test for
-				break;
+			//System.out.println(newstr);
+			if(newstr.length()>longest){
+				longest = newstr.length();
+			}
+			newstr = "";
 		}
-		System.out.println(maxSubstrLength);
+		return longest;
+	}
+	// Checking repetition in a string
+	public static boolean repCheck(String str,char c){
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)==c)
+				return true;
+		}
+		return false;
 	}
 }
